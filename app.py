@@ -398,5 +398,7 @@ if __name__ == '__main__':
     missing_files = [f for f in required_files if not os.path.exists(f)]
     if missing_files:
         print(f"⚠️  Warning: Missing files: {missing_files}")
+        port = int(os.environ.get("PORT", 5000))
+        app.run(debug=False, host="0.0.0.0", port=port)
     
     
